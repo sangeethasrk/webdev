@@ -22,7 +22,7 @@
             })
 
             .when("/form", {
-                templateUrl: "views/forms/fields.view.html",
+                templateUrl: "views/forms/forms.view.html",
                 controller:"FormController"
             })
 
