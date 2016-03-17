@@ -11,17 +11,17 @@
 
     it('should test home state provider',function(){
         expect(state.get('home').controller).toBe('HomeController');
-        expect(state.get('home').templateUrl).toEqual('views/home/home.html');
+        expect(state.get('home').templateUrl).toEqual('views/home/home.view.html');
     });
 
     it('should test details state provider', function () {
         expect(state.get('details').controller).toBe('DetailsController');
-        expect(state.get('details').templateUrl).toEqual('views/details/details.html');
+        expect(state.get('details').templateUrl).toEqual('views/details/details.view.html');
     });
 
     it('should test redirect state provider', function () {
         expect(state.get('redirect').controller).toBe('RedirectController');
-        expect(state.get('redirect').templateUrl).toEqual('views/details/redirect.html');
+        expect(state.get('redirect').templateUrl).toEqual('views/details/redirect.view.html');
     });
 
     it('should test default state if no route is given', function () {

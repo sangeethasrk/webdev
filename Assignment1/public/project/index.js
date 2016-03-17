@@ -19,7 +19,7 @@ app.controller('NavController', function ($scope, $http, $modal, $routeParams, $
 
         $rootScope.message = null;
         var modalInstance = $modal.open({
-            templateUrl: 'views/login/login.html',
+            templateUrl: 'views/login/login.view.html',
             controller: 'LoginController'
 
         });
@@ -28,7 +28,7 @@ app.controller('NavController', function ($scope, $http, $modal, $routeParams, $
     $scope.signupm = function () {
         $rootScope.signupMessage = null;
         $modal.open({
-            templateUrl: 'views/register/registration.html',
+            templateUrl: 'views/register/register.view.html',
             controller: 'SignupController'
 
         });
@@ -54,22 +54,22 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         // HOME STATES AND NESTED VIEWS ========================================
         .state('home', {
             url: '/home',
-            templateUrl: 'views/home/home.html',
+            templateUrl: 'views/home/home.view.html',
             controller: 'HomeController'
         })
         .state('profile', {
             url: '/profile/:userid',
-            templateUrl: 'views/profile/profile.html',
+            templateUrl: 'views/profile/profile.view.html',
             controller: 'ProfileController'
         })
         .state('details', {
             url: '/details?eventObj',
-            templateUrl: 'views/details/details.html',
+            templateUrl: 'views/details/details.view.html',
             controller: 'DetailsController'
         })
         .state('redirect', {
             url: '/redirect?obj',
-            templateUrl: 'views/details/redirect.html',
+            templateUrl: 'views/details/redirect.view.html',
             controller: 'RedirectController'
         })
         
