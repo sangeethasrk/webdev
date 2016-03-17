@@ -33,7 +33,7 @@
     </div>
 </div>
 <div class="container ">
-    <h3 class="events">EVENTS NEAR YOU!! </h3>
+    <h3 class="events">PLAYGROUNDS NEAR YOU!</h3>
     <section id="pattern" class="pattern" ng-show="events">
         <ul class="grid" ng-repeat="event in events" ng-click="eventDetails(event.id)">
 
@@ -52,7 +52,7 @@
 </div>
 
 <div class="container">
-    <h3 class="events" ng-show="currentUser">YOUR RECOMMENDED EVENTS!!</h3>
+    <h3 class="events" ng-show="currentUser">YOUR RECOMMENDED GROUNDS!!</h3>
     <section id="pattern" class="pattern" ng-show="currentUser">
         <ul class="grid" ng-repeat="revent in rEvents" ng-click="eventDetails(revent.id)">
             <li class="white-panel">
@@ -68,36 +68,3 @@
         </ul>
     </section>
 </div>
-<!--<div class="container">
-    <h3 id="events">EVENTS NEAR YOU!! </h3>
-    <section id="demo" ng-show="events">
-        
-        <article ng-repeat="event in events" class="white-panel" ng-click="eventDetails(event.id)">
-            <img ng-src="{{event.image.large.url || altimg}}" />
-
-            <h4>{{event.title}}</h4>
-            <p>
-                <label>{{event.venue_name}}</label><br />
-                <label>{{event.venue_address}}</label><br />
-                <label>{{event.start_time}}</label>
-            </p>
-        </article>
-
-    </section>
-    <div class="container">
-        <h3 ng-show="currentUser">Your Recommendations!!</h3>
-        <section id="demor" ng-show="currentUser">
-
-            <article ng-repeat="revent in rEvents" class="white-panel" ng-click="eventDetails(event.id)">
-                <img ng-src="{{revent.image.large.url || altimg}}" />
-
-                <h4>{{revent.title}}</h4>
-                <p>
-                    <label>{{revent.venue_name}}</label><br />
-                    <label>{{revent.venue_address}}</label><br />
-                    <label>{{revent.start_time}}</label>
-                </p>
-            </article>
-        </section>
-    </div>
-</div>-->
