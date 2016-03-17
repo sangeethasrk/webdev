@@ -1,5 +1,5 @@
 ﻿    body {
-    background-image: url('../images/mountain.jpg');
+    background-image: url('../images/basketball.jpg');
     background-size: auto;
     background-repeat: repeat;
 }
@@ -225,7 +225,7 @@
 	}
 	
 	.bg-slideshow li:nth-child(1) span{
-		background-image: url(../images/mountain.jpg);
+		background-image: url(../images/basketball.jpg);
 	}
 	
 	.bg-slideshow li:nth-child(2) span{
@@ -235,7 +235,7 @@
 	}
 	
 	.bg-slideshow li:nth-child(3) span{
-		background-image: url(../images/partynyt.jpg);
+		background-image: url(../images/tennis.jpg);
 		-webkit-animation-delay: 12s;
 		-moz-animation-delay: 12s;
 	}
