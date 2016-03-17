@@ -1,0 +1,81 @@
+﻿body {
+}
+
+#search{
+    margin-top: 25px;
+}
+
+.input-group{
+    width: 700px;
+    margin: auto;
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    font-family: 'AR DECODE';
+}
+
+.form-control{
+    font-size: 20px;
+    font-family: cursive;
+    padding: 25px;
+    width: 990px;
+    margin: 20px;
+}
+
+
+.searchbtn {
+    margin-left:30px;
+    margin-top: 17px;
+background: #7310ad;
+  background-image: -webkit-linear-gradient(top, #7310ad, #2c0352);
+  background-image: -moz-linear-gradient(top, #7310ad, #2c0352);
+  background-image: -ms-linear-gradient(top, #7310ad, #2c0352);
+  background-image: -o-linear-gradient(top, #7310ad, #2c0352);
+  background-image: linear-gradient(to bottom, #7310ad, #2c0352);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.searchbtn:hover {
+   background: #751cdb;
+  background-image: -webkit-linear-gradient(top, #751cdb, #6610e6);
+  background-image: -moz-linear-gradient(top, #751cdb, #6610e6);
+  background-image: -ms-linear-gradient(top, #751cdb, #6610e6);
+  background-image: -o-linear-gradient(top, #751cdb, #6610e6);
+  background-image: linear-gradient(to bottom, #751cdb, #6610e6);
+  text-decoration: none;
+}
+
+#map{
+     max-width: 100%;
+    width: 1100px;
+    height: 500px;
+    margin: 2px auto auto auto;
+    padding: 20px;
+    border-style: solid;
+}
+
+.container{
+    width: 1100px;
+    margin-top: 30px;
+}
+
+#events{
+    font-family: cursive;
+    font-size: 30px;
+    text-transform: uppercase;
+    background-color: black;
+    padding: 10px;
+    color: coral;
+}
+
+#demo{
+    height: 1400px; 
+    background-color: transparent;
+}

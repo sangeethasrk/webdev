@@ -1,87 +1,54 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>WHAM</title>
-    <link rel="icon" type="image/png"
-          href="https://www.colourbox.com/preview/2363591-illustration-of-wham-on-white-
+    <title>What's Up??</title>
 
-background.jpg" />
     <meta charset="utf-8" />
 </head>
 <body ng-app="mainApp">
     <nav class="navbar navbar-inverse" id="top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header" style=" text-align: center; margin-left:30px;padding-top: 5px;">
+            <div class="navbar-header">
                 <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" id="headercls" href="#/home">WASSUP</a>
+                <a class="navbar-brand" href="#/home">Whats Up</a>
             </div>
             <div id="navbarCollapse" class="collapse navbar-collapse" ng-controller="NavController">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#/profile/{{currentUser.user_id}}" ng-show="currentUser" class="three-d">
-                            PROFILE
-                            <span aria-hidden="true" class="three-d-box">
-                                <span class="front">PROFILE</span>
-                                <span class="back">PROFILE</span>
-
-                            </span>
-                        </a>
-                    </li>
-                    
-                    <!--<li>
-                        <a href="#" class="three-d">
-                            ABOUT US
-                            <span aria-hidden="true" class="three-d-box">
-                                <span class="front">ABOUT US</span>
-                                <span class="back">ABOUT US</span>
-
-                            </span>
-                        </a>
+                        <a href="#/profile/{{currentUser.user_id}}" ng-show="currentUser">Profile</a>
                     </li>
                     <li>
-                        <a href="#" class="three-d">
-                            ABOUT WHAT'S UP
-                            <span aria-hidden="true" class="three-d-box">
-                                <span class="front">ABOUT WASSUP</span>
-                                <span class="back">ABOUT WASSUP</span>
-
-                            </span>
-                        </a>
-                    </li>-->
+                        <a href="#">Events</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
                 </ul>
-                <ul class="nav navbar-right" ng-show="!currentUser" style="width: 0px;margin-right: 120px;padding-top: 4px;">
-                    <li><button class="myButton" ng-click="loginm()" style="margin-right:25px;float:right">LOGIN</button></li>
-                    <li><button class="myButton" ng-click="signupm()" >REGISTER</button></li>
+                <ul class="nav navbar-nav navbar-right" ng-show="!currentUser">
+                    <li><button class="btn btn-success" ng-click="loginm()" style="margin-right:5px">Login</button></li>
+                    <li><button class="btn btn-success" ng-click="signupm()">SignUp!</button></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" ng-show="currentUser">
-                    <li><button class="btn btn-danger" ng-click="logout()">LOGOUT</button></li>
+                    <li><button class="btn btn-danger" ng-click="logout()">Logout</button></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <ul class="bg-slideshow">
-        <li><span>I1</span></li>
-        <li><span>I2</span></li>
-        <li><span>I3</span></li>
-        <li><span>I4</span></li>
-    </ul>
-
-
     <!-- Custom CSS -->
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
-    <link href="css/indexf.css" type="text/css" rel="stylesheet" />
-    <link href="css/homef.css" type="text/css" rel="stylesheet" />
-    <link href="css/details.css" type="text/css" rel="stylesheet" />
-    <link href="css/login.css" type="text/css" rel="stylesheet" />
-    <link href="css/registeration.css" type="text/css" rel="stylesheet" />
+    <link href="css/index.css" type="text/css" rel="stylesheet" />
+    <link href="css/home.css" type="text/css" rel="stylesheet" />
+    <link href="css/details-tag.css" type="text/css" rel="stylesheet" />
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
     <!-- Required js -->
@@ -96,6 +63,7 @@ background.jpg" />
     <script src="js/angular-ui-router.js"></script>
     <script src="js/validate.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-sanitize.min.js"></script>
+    <script src="js/angular-social-links-master/angular-social-links.js"></script>
 
     <!-- Project Page JS -->
     <!--https://maps.googleapis.com/maps/api/js?key=AIzaSyDoDjvyo5Yn_kvSJ8Z2F6dQpHe5xBvO2CQ&sensor=false&extension=.js-->
@@ -117,6 +85,3 @@ background.jpg" />
     </div>
 </body>
 </html>
-<!-- Hosting24 Analytics Code -->
-<script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
-<!-- End Of Analytics Code -->

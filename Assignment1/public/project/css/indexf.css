@@ -1,0 +1,310 @@
+﻿    body {
+    background-image: url('../images/mountain.jpg');
+    background-size: auto;
+    background-repeat: repeat;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: transparent;
+}
+
+.title{
+    text-transform: uppercase;
+    font-style: inherit;
+    font-family: -webkit-pictograph;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-bottom: 15px;
+    color: coral;
+}
+.input_group{
+    height: 50px;
+    width: 990px;
+    margin: 20px;
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    font-size: 100px;
+    font-family: 'AR DECODE';
+}
+
+.navbar-header{
+    text-align: center;
+    margin-left: 140px;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #101010;
+    padding: 5px;
+}
+
+#AboutUs {
+       max-width: 1200px;
+    min-width: 240px;
+    margin: auto;
+    font-size: x-large;
+    font-family: cursive;
+    margin-top: 50px;
+    border-style: ridge;
+    padding: 50px 100px 100px 100px;
+    background-color: azure;
+    margin-bottom: 50px;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 30px;
+    line-height: 20px;
+}
+
+.navbar-inverse {
+        background-color: #222;
+    border-color: #080808;
+    width: 1400px;
+    margin: auto;
+    height:70px;
+}
+
+.navbar-brand {
+    color: thistle;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+
+.navbar-inverse .navbar-nav > li > a {
+    color: ghostwhite;
+    text-transform: uppercase;
+    float: left;
+    width: auto;
+    font-size: 20px;
+}
+
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-left: 30px;
+}
+
+.navbar-nav {
+    float: left;
+    margin-left: 400px;
+}
+
+
+.navbar-nav {
+	display: block;
+	//background: #000;
+}
+
+.navbar-nav li {
+	display: inline-block;
+}
+
+.navbar-nav li a {
+	color: #fff;
+	display: block;
+    padding: 0px 20px 0px 350px;
+	text-decoration: none;
+	font-family: 'Passion One', Arial, sans-serif;
+	text-transform: uppercase;
+	overflow: visible;
+	line-height: 20px;
+	font-size: 24px;
+	padding: 15px 10px;
+    margin-left: 40px;
+}
+
+#headercls{
+        color: coral;
+    font-size: 40px;
+    letter-spacing:20px;
+}
+
+.three-d {
+	perspective: 200px;
+	transition: all .07s linear;
+	position: relative;
+	cursor: pointer;
+}
+	
+	.three-d:hover .three-d-box, 
+	.three-d:focus .three-d-box {
+		transform: translateZ(-25px) rotateX(90deg);
+	}
+
+.three-d-box {
+	transition: all .3s ease-out;
+	transform: translatez(-25px);
+	transform-style: preserve-3d;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+
+.front {
+	transform: rotatex(0deg) translatez(25px);
+}
+
+.back {
+	transform: rotatex(-90deg) translatez(25px);
+	color: #ffe7c4;
+}
+
+.front, .back {
+	display: block;
+	width: 100%;
+	height: 120%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: black;
+	padding: 15px 10px;
+	color: white;
+	pointer-events: none;
+	box-sizing: border-box;
+}
+
+
+.cfeimg{
+        width: 100px;
+    height: 55px;
+    margin: 0px;
+    float: left;
+    padding: 2px;
+    margin-left: 120px;  
+}
+
+
+.no-animations .bg-slideshow li span {
+            opacity: 1;
+        }
+
+.bg-slideshow,
+   .bg-slideshow:after { 
+    position: fixed; 
+    width: 100%; 
+    height: 100%; 
+    top: 0px;
+    left: 0px;
+    z-index: -1; 
+	}
+	
+	.bg-slideshow:after{
+		content: '';
+		background: url(pattern.png) repeat top left;
+	}
+	
+	ul{
+		list-style: none;
+	}
+	.bg-slideshow li span{
+		position: absolute; 
+	    width: 100%; 
+	    height: 100%; 
+	    top: 0px;
+	    left: 0px;
+	    color: transparent;
+	    background-size: cover;
+	    background-position: 50% 50%;
+	    background-repeat: none;
+	    opacity: 0;
+	    z-index: -2; 
+	    -webkit-backface-visibility: hidden;
+	    -webkit-animation: imageAnim 24s linear infinite 0s;
+	    -moz-backface-visibility: hidden;
+	    -moz-animation: imageAnim 24s linear infinite 0s;
+	}
+	
+	.bg-slideshow li:nth-child(1) span{
+		background-image: url(../images/mountain.jpg);
+	}
+	
+	.bg-slideshow li:nth-child(2) span{
+		background-image: url(../images/Soccer.jpg);
+		-webkit-animation-delay: 6s;
+		-moz-animation-delay: 6s;
+	}
+	
+	.bg-slideshow li:nth-child(3) span{
+		background-image: url(../images/partynyt.jpg);
+		-webkit-animation-delay: 12s;
+		-moz-animation-delay: 12s;
+	}
+	
+	.bg-slideshow li:nth-child(4) span{
+		background-image: url(../images/water_sport.jpg);
+		-webkit-animation-delay: 18s;
+		-moz-animation-delay: 18s;
+	}
+	
+	@-webkit-keyframes imageAnim{
+		0% {opacity: 0; -webkit-animation-timing-function: ease-in;}
+		12% {opacity: 1; -webkit-animation-timing-function: ease-out;}
+		25% {opacity: 1;}
+		50% {opacity: 0;}
+		100% {opacity: 0;}
+	}
+	
+	@-moz-keyframes imageAnim{
+		0% {opacity: 0; -moz-animation-timing-function: ease-in;}
+		12% {opacity: 1; -moz-animation-timing-function: ease-out;}
+		25% {opacity: 1;}
+		50% {opacity: 0;}
+		100% {opacity: 0;}
+	}
+
+
+
+.myButton {
+	-moz-box-shadow: 3px 4px 0px 0px #8a2a21;
+	-webkit-box-shadow: 3px 4px 0px 0px #8a2a21;
+	box-shadow: 3px 4px 0px 0px #8a2a21;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24437));
+	background:-moz-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+	background:-webkit-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+	background:-o-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+	background:-ms-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+	background:linear-gradient(to bottom, coral 5%, #f24437 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24437',GradientType=0);
+	background-color:#c62d1f;
+	-moz-border-radius:18px;
+	-webkit-border-radius:18px;
+	border-radius:18px;
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:7px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #000ea3;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24437), color-stop(1, #c62d1f));
+	background:-moz-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+	background:-webkit-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+	background:-o-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+	background:-ms-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+	background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24437', endColorstr='#c62d1f',GradientType=0);
+	background-color:#f24437;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+
+   
