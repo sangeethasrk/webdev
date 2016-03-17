@@ -66,16 +66,158 @@ background: #7310ad;
     margin-top: 30px;
 }
 
-#events{
+.events{
     font-family: cursive;
     font-size: 30px;
     text-transform: uppercase;
     background-color: black;
     padding: 10px;
-    color: coral;
+    color: greenyellow;
+    letter-spacing: 6px;
+    padding: 20px;
+    text-align:center;
+    margin-bottom: 10px;
+}
+#demoeve {
+    position: relative; 
+max-width: 100%;
+width: 1200px;
+margin: auto;
 }
 
-#demo{
-    height: 1400px; 
-    background-color: transparent;
+#demoevr {
+    position: relative; 
+max-width: 100%;
+width: 1200px;
+margin: auto;
 }
+
+
+img {
+width: 100%;
+max-width: 100%;
+height: auto;
+background:black; 
+height: 200px;
+}
+
+.white-panel {
+background-color: transparent;
+box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+padding: 12px;
+color: orchid;
+background-color: black;
+font-style:inherit;
+border-style:solid;
+border-color: white;
+height: 460px;
+
+}
+
+.white-panel h3 {
+font-size: 55px;
+text-transform:uppercase;
+background-color: lightcoral;
+font-style:inherit;
+font-weight:bold;
+
+}
+
+.title{
+        text-transform: uppercase;
+    font-style: inherit;
+    font-family: -webkit-pictograph;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-bottom: 15px;
+    color: orchid;
+ }
+.white-panel1:hover {
+box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+background-color: olivedrab;
+color: black;
+text-transform:uppercase;
+font-style:inherit;
+
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+}
+
+.infoWindowContent {
+    font-size:  14px !important;
+    border-top: 1px solid #ccc;
+    text-transform:uppercase;
+   
+}
+
+
+.reve{
+    font-family: cursive;
+    font-size: 30px;
+    text-transform: uppercase;
+    background-color: black;
+    padding: 10px;
+    color: greenyellow;
+    letter-spacing: 6px;
+    padding: 20px;
+    text-align:center;
+    margin-bottom: 10px;
+    margin-top: 100px;
+}
+
+
+
+.grid {
+			max-width: 76em;
+			padding-right: 30px;
+		}
+		.grid li {
+            padding: 8px;
+		}
+		.grid li > div {
+			background: #808080;
+			padding: 7em 2em;
+			text-align: center;
+		}
+		.grid li a {
+			color: #fff;
+		}
+
+        .grid li:hover {
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+    background-color: olivedrab;
+color: black;
+    font-style:inherit;
+
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;
+}
+
+		
+		@media all and (min-width: 27em) {
+			.grid li {
+				width: 50%;
+				float: left;
+			}
+		}
+		
+		@media all and (min-width: 40em) {
+			.grid li {
+				width: 33.3333333%;
+			}
+			.grid li.wide {
+				width: 66.666666%;
+			}
+		}
+		@media all and (min-width: 60em) {
+			.grid li {
+				width: 25%;
+			}
+			.grid li.wide {
+				width: 50%;
+			}
+		}
