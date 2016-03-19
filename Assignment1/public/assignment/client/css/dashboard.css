@@ -54,6 +54,7 @@ body {
     background-color: #428bca;
 }
 
+
 /*
  * Main content
  */
@@ -70,11 +71,9 @@ body {
 .main .page-header {
     margin-top: 0;
 }
-
 /*
  * Placeholder dashboard ideas
  */
-
 .placeholders {
     margin-bottom: 30px;
     text-align: center;
