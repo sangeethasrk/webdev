@@ -1,21 +1,19 @@
 var express = require('express');
 var app = express();
+var session = require('express-session');
+var bodyParser = require('body-parser');
+var cookieParser  = require('cookie-parser');
+var multer = require('multer');
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
 
 app.use(express.static(__dirname + '/public'));
-app.get('/hello', function(req, res){
-    res.send('hello world 123');
-});
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(multer());
+app.use(cookieParser());
 
-app.get('/user',function(req,res){
-    var users;
-    users = [
-        {username: 'alice', first: 'Alice', last: 'wonderland'},
-        {username: 'bob', first: 'Bob', last: 'Builder'},
-        {username: 'geethsrk', first: 'Sangeetha', last: 'Sivaramakrishnan'}
-    ];
-    res.json(users);
-});
+require("./public/assignment/server/app.js")(app);
+
 app.listen(port, ipaddress);
