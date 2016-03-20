@@ -33,7 +33,6 @@ module.exports = function(uuid,formModel){
                 fields[u] = field;
             }
         }
-        return null;
     }
 
     function findField(formId,fieldId){
