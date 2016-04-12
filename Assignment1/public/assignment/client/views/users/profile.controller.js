@@ -6,41 +6,41 @@
     angular.module("FormBuilderApp")
         .controller("ProfileController", ProfileController);
 
-    function ProfileController($scope,UserService,$rootScope) {
+    function ProfileController(UserService,$rootScope) {
         var vm = this;
         vm.update = update;
-        var currentUser = $rootScope.currentUser;
-        vm.username= currentUser.username;
-        vm.password= currentUser.password;
-        vm.firstName = currentUser.firstName;
-        vm.lastName = currentUser.lastName;
-        vm.email = currentUser.email;
+        var loggedUser = $rootScope.currentUser;
+        vm.username= loggedUser.username;
+        vm.password= loggedUser.password;
+        vm.firstName = loggedUser.firstName;
+        vm.lastName = loggedUser.lastName;
+        vm.emails = loggedUser.emails.join(",");
+
 
         function init(){
 
         }init();
 
-        function update(username,password,firstName,lastName,email) {
-            $scope.message = null;
-            var id = currentUser._id;
+        function update(username,password,firstName,lastName,emails) {
+            vm.message = null;
+            var id = loggedUser._id;
+            console.log(emails);
             var userDetails={
-                "_id":id,
                 "username":username,
                 "password":password,
                 "firstName":firstName,
                 "lastName":lastName,
-                "email":email
+                "emails":emails.split(",")
             };
             UserService.updateUser(id,userDetails)
-                .then(function(response){
-                    if(response.data)
-                    {
-                        UserService.setCurrentUser(response.data);
-                        $scope.message = "Your Profile has been updated!!!";
-                    }else{
-                        $scope.message = "Sorry! Please enter your details again!!!";
+                .then(function(user){
+                        UserService.setCurrentUser(user.data);
+                        vm.message = "Your Profile has been updated!!!";
+                    },
+                    function(err){
+                        vm.message = "Sorry! Please enter your details again!!!";
                     }
-                });
+                );
         }
     }
 })();

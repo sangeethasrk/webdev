@@ -6,7 +6,7 @@
     angular.module("FormBuilderApp")
         .controller("LoginController",LoginController);
 
-    function LoginController($scope, UserService,$rootScope,$location) {
+    function LoginController(UserService,$rootScope,$location) {
         var vm = this;
         vm.login = login;
 
@@ -16,20 +16,24 @@
 
         function login(user) {
             if(!user){
-                $scope.message = "Please enter login details";
+                vm.message = "Please enter login details";
                 return;
             }
             UserService.findUserByCredentials
                 ({username:user.username,
                     password:user.password})
-                .then(function(response){
-                    if(response.data){
-                        UserService.setCurrentUser(response.data);
-                        $location.url("/profile");
-                    }else{
-                        $scope.message = "Username or password doesnot match";
+                .then(function(user){
+                        if(user.data){
+                            UserService.setCurrentUser(user.data);
+                            $location.url("/profile");
+                        }else{
+                            vm.message = "username and/or password doesn't match";
+                        }
+                    },
+                    function(err){
+                        console.log(err);
                     }
-                });
+                );
         }
     }
 })();
