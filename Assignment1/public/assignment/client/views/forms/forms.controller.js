@@ -1,6 +1,3 @@
-/**
- * Created by sange_000 on 2/15/2016.
- */
 (function(){
     "use strict";
 
@@ -64,10 +61,10 @@
 
         function deleteForm(index){
             console.log("delete form - controller");
-            FormService.deleteFormById(vm.forms[index]._id)
-                .then(init(),function(err){
-                    console.log(err);
-                });
+              FormService.deleteFormById(vm.forms[index]._id)
+                  .then(init(),function(err){
+                      console.log(err);
+                  });
         }
 
         function selectForm(index){

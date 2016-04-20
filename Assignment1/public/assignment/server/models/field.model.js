@@ -7,7 +7,8 @@ module.exports = function(form){
         deleteField:deleteField,
         updateField:updateField,
         findField:findField,
-        findAllFieldsForForm:findAllFieldsForForm
+        findAllFieldsForForm:findAllFieldsForForm,
+        sortField:sortField
     };
 
     return api;
@@ -25,7 +26,7 @@ module.exports = function(form){
                         {$set:{
                             fields: doc.fields,
                             updated:new Date()
-                        }},
+                    }},
                         function (err,response) {
                             if (err) {
                                 deferred.reject(err);
@@ -41,31 +42,31 @@ module.exports = function(form){
 
     function  deleteField(formId,fieldId){
         var deferred = q.defer();
-        form.findById(formId,
-            function (err, response) {
-                if (err) {
-                    deferred.reject(err);
-                } else {
-                    var newForm = response;
-                    for(var u in newForm.fields){
-                        if(newForm.fields[u]._id == fieldId){
-                            newForm.fields.splice(u,1);
-                            form.update({_id : formId},
-                                {$set:{
-                                    fields:newForm.fields,
-                                    updated:new Date()
-                                }},
-                                function (err,doc) {
-                                    if (err) {
-                                        deferred.reject(err);
-                                    } else {
-                                        deferred.resolve(doc);
-                                    }
-                                });
+            form.findById(formId,
+                function (err, response) {
+                    if (err) {
+                        deferred.reject(err);
+                    } else {
+                        var newForm = response;
+                        for(var u in newForm.fields){
+                            if(newForm.fields[u]._id == fieldId){
+                                newForm.fields.splice(u,1);
+                                form.update({_id : formId},
+                                            {$set:{
+                                                fields:newForm.fields,
+                                                updated:new Date()
+                                            }},
+                                           function (err,doc) {
+                                             if (err) {
+                                                deferred.reject(err);
+                                             } else {
+                                                deferred.resolve(doc);
+                                            }
+                                    });
+                            }
                         }
                     }
-                }
-            });
+                });
         return deferred.promise;
     }
 
@@ -81,8 +82,8 @@ module.exports = function(form){
                         if(newForm.fields[u]._id == fieldId){
                             newForm.fields[u] = field;
                             form.update({_id : formId},
-                                {$set: {fields: newForm.fields,
-                                    updated:new Date()}},
+                                        {$set: {fields: newForm.fields,
+                                                updated:new Date()}},
                                 function (err, doc) {
                                     if (err) {
                                         deferred.reject(err);
@@ -94,7 +95,7 @@ module.exports = function(form){
                     }
                 }
             });
-        return deferred.promise;
+       return deferred.promise;
     }
 
     function findField(formId,fieldId){
@@ -128,6 +129,31 @@ module.exports = function(form){
                 }
             });
 
+        return deferred.promise;
+    }
+
+    function sortField(formId,startIndex,endIndex){
+        var deferred = q.defer();
+
+        form.findById(formId,
+        function(err,doc){
+            if(err){
+                deferred.reject(err);
+            }else{
+                var userForm = doc;
+                userForm.fields.splice(endIndex,0,userForm.fields.splice(startIndex,1)[0]);
+                form.update(
+                {"_id":formId},
+                {$set:{"fields":userForm.fields}},
+                    function(err,doc){
+                      if(err){
+                          deferred.reject(err);
+                      } else{
+                          deferred.resolve(doc);
+                      }
+                });
+            }
+        });
         return deferred.promise;
     }
 };

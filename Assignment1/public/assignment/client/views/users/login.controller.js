@@ -1,10 +1,7 @@
-/**
- * Created by sange_000 on 2/17/2016.
- */
 (function() {
     "use strict";
     angular.module("FormBuilderApp")
-        .controller("LoginController",LoginController);
+           .controller("LoginController",LoginController);
 
     function LoginController(UserService,$rootScope,$location) {
         var vm = this;
@@ -19,19 +16,13 @@
                 vm.message = "Please enter login details";
                 return;
             }
-            UserService.findUserByCredentials
-                ({username:user.username,
-                    password:user.password})
-                .then(function(user){
-                        if(user.data){
-                            UserService.setCurrentUser(user.data);
-                            $location.url("/profile");
-                        }else{
-                            vm.message = "username and/or password doesn't match";
-                        }
+            UserService.login(user)
+                .then(function(response){
+                        $rootScope.currentUser = response.data;
+                        $location.url("/profile");
                     },
                     function(err){
-                        console.log(err);
+                        vm.message = "username or password not found";
                     }
                 );
         }

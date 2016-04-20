@@ -1,4 +1,5 @@
 module.exports = function(app,formModel){
+
     app.get("/api/assignment/form/:formId",findFormById);
     app.delete("/api/assignment/form/:formId",deleteFormById);
     app.post("/api/assignment/user/:userId/form",createFormForUser);
@@ -19,11 +20,11 @@ module.exports = function(app,formModel){
         var fid = req.params.formId;
         formModel.findFormById(fid)
             .then(function(form){
-                    res.json(form);
-                },
-                function(err){
-                    res.status(400).send(err);
-                });
+                res.json(form);
+            },
+            function(err){
+                res.status(400).send(err);
+            });
     }
 
     function deleteFormById(req,res){

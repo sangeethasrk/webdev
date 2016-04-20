@@ -1,13 +1,10 @@
-/**
- * Created by sange_000 on 2/15/2016.
- */
 (function() {
     "use strict";
 
     angular.module("FormBuilderApp")
         .controller("FieldController",FieldController);
 
-    function FieldController(FieldService,FormService,$routeParams,$rootScope,$scope) {
+    function FieldController(FieldService,FormService,$routeParams,$rootScope) {
         var vm = this;
 
         var formId;
@@ -18,7 +15,7 @@
         vm.deleteField = deleteField;
         vm.addField=addField;
         vm.repeatField = repeatField;
-        $scope.updateForm = updateForm;
+        vm.sortField = sortField;
 
         var currentUser =$rootScope.currentUser;
 
@@ -52,19 +49,19 @@
 
             FieldService.findFieldByForm(formId)
                 .then(function(response){
-                        vm.fields = response.data;
-                    },
+                    vm.fields = response.data;
+                },
                     function(err){
-                        console.log(err);
-                    });
+                    console.log(err);
+                });
 
             FormService.findFormById(formId)
                 .then(function(response){
-                        vm.form = response.data;
-                    },
-                    function(err){
-                        console.log(err);
-                    })
+                    vm.form = response.data;
+                },
+                function(err){
+                    console.log(err);
+                })
 
         }init();
 
@@ -110,9 +107,9 @@
             vm.fieldEdit.label = vm.label;
 
             FieldService.updateField(formId,vm.fieldEdit._id,vm.fieldEdit)
-                .then(init(),function(err){
-                    console.log(err);
-                });
+                    .then(init(),function(err){
+                        console.log(err);
+                    });
             vm.label = null;
             vm.placeholder = null;
             vm.options = null;
@@ -179,6 +176,17 @@
             console.log(field);
             FieldService.createField(formId,field)
                 .then(init(),function(err){
+                console.log(err);
+            });
+        }
+
+        function sortField(start,end){
+            FieldService
+                .sortField(formId,start,end)
+                .then(function(response){
+                    vm.fields= response.data;
+                },
+                function(err){
                     console.log(err);
                 });
         }
